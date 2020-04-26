@@ -12,7 +12,9 @@ public:
    std::list<Entry>& entries(){ return _entries; }
    void sortByFirstname();
    void sortByLastName();
+   std::list<Entry> match(std::string const&);
 private:
+   std::string str_tolower(std::string s);
    std::list<Entry> _entries;
 
 };
