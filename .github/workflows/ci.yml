@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: action-gtest
-    - uses: CyberZHG/github-action-gtest@0.0.1
+      uses: CyberZHG/github-action-gtest@0.0.1
     - uses: actions/checkout@v2
     - name: cmake
       run: cmake .
