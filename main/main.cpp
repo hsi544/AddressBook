@@ -8,7 +8,6 @@ using namespace std;
 int main(int argc, char **argv)
 {
 
-
    Entry e{"John", "Doe", "+447890345234"};
    Entry f{"Jack", "Sparrow", "+447570345334"};
    Entry g{"Mary", "Poppins", "+449998887374"};
