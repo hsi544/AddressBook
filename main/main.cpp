@@ -42,10 +42,10 @@ int main(int argc, char **argv)
 
    // add entries for pattern matching
    ab.add(Entry{"Daniel", "Craig"});
-   ab.add(Entry{"Mary", "Poppins"});
    ab.add(Entry{"Danny", "Glover"});
    ab.add(Entry{"Francis", "Dan"});
-   ab.add(Entry{"ADan", "guruguru"});
+   ab.add(Entry{"Chicken", "ADana"});
+   ab.add(Entry{"dana", "doni"});
 
    list<Entry> matches = ab.match("Dan");
 
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
       cout << e << endl;
    cout << "\n";
 
-   cout << "matches for Dan :" << endl;
+   cout << "entries matching Dan :" << endl;
    for(auto m: matches)
       cout << m << endl;
    cout << "\n";

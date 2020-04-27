@@ -1,5 +1,6 @@
 #include "AddressBook.h"
 #include <regex>
+#include <stdexcept>
 
 std::string AddressBook::str_tolower(std::string s) {
     std::transform(s.begin(), s.end(), s.begin(),
@@ -9,6 +10,9 @@ std::string AddressBook::str_tolower(std::string s) {
 }
 
 void AddressBook::remove(Entry const &e) {
+   if(this->empty()) {
+      throw std::runtime_error("can't remove from and empty address book");
+   }
    auto pos = std::find(_entries.begin(), _entries.end(), e);
    _entries.erase(pos);
 }
@@ -25,7 +29,7 @@ std::list<Entry> AddressBook::match(std::string const &exp)
 {
    AddressBook tmp;
 
-   std::regex reg("("+str_tolower(exp)+")"+"(.*)"); // matches "dan*"
+   std::regex reg("("+str_tolower(exp)+")"+"(.*)"); // matches "exp*"
 
    for(auto e: this->entries()) {
       if(std::regex_match(str_tolower(e.first()), reg) || std::regex_match(str_tolower(e.last()), reg)) {
